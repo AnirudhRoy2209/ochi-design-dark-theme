@@ -14,7 +14,7 @@ function Featured() {
     cards[index].start({y:"100%"});
   };
   return (
-    <div className='w-full py-20'>
+    <div id='our-work' className='w-full py-20'>
         <div className='w-full px-20 border-b-[1px] pb-20 border-zinc-700'>
             <h1 className='text-7xl font-neue tracking-tight'>Featured projects</h1>
         </div>
@@ -24,7 +24,7 @@ function Featured() {
               onHoverEnd={()=>handlehoverEnd(0)} className='cardcontainer w-1/2 relative h-[75vh]'>
               <h1 className='absolute flex text-9xl tracking-tighter leading-none z-[9] overflow-hidden left-full -translate-x-1/2 top-1/2 -translate-y-1/2 text-[#CDEA68]'>
               {"FYDE".split("").map((items, index)=>(
-                <motion.span initial={{y:"100%"}}
+                <motion.span key={index} initial={{y:"100%"}}
                 animate={cards[0]}
                 transition={{ease:[0.22, 1, 0.36, 1], delay:index*.05}} className='inline-block font-bold'>{items}</motion.span>
               ))}
@@ -37,7 +37,7 @@ function Featured() {
               onHoverEnd={()=>handlehoverEnd(1)} className='cardcontainer relative w-1/2 h-[75vh]'>
                <h1 className='absolute flex overflow-hidden text-9xl tracking-tighter leading-none z-[9] right-full translate-x-1/2 top-1/2 -translate-y-1/2 text-[#CDEA68]'>
                {"VISTERO".split("").map((items, index)=>(
-              <motion.span initial={{y:"100%"}}
+              <motion.span key={index} initial={{y:"100%"}}
                 animate={cards[1]}
                 transition={{ease:[0.22, 1, 0.36, 1], delay:index*.05}} className='inline-block font-bold'>{items}</motion.span>
               ))}
